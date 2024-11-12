@@ -482,7 +482,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 1
   m_Sprite: {fileID: 7482667652216324306, guid: 311925a002f4447b3a28927169b83ea6, type: 3}
   m_Color: {r: 0.21960786, g: 0.21960786, b: 0.21960786, a: 1}
   m_FlipX: 0
@@ -547,8 +547,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4218fc5f366049147bab39912106bf14, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  gameManager: {fileID: 1499966721}
-  isLizardBehindThisBox: 0
+  lizardWizard: {fileID: 1758378425}
+  knight: {fileID: 601178823}
 --- !u!1 &493955043
 GameObject:
   m_ObjectHideFlags: 0
@@ -608,7 +608,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 1
   m_Sprite: {fileID: 7482667652216324306, guid: 311925a002f4447b3a28927169b83ea6, type: 3}
   m_Color: {r: 0.21960786, g: 0.21960786, b: 0.21960786, a: 1}
   m_FlipX: 0
@@ -673,8 +673,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4218fc5f366049147bab39912106bf14, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  gameManager: {fileID: 1499966721}
-  isLizardBehindThisBox: 0
+  lizardWizard: {fileID: 1758378425}
+  knight: {fileID: 601178823}
 --- !u!1 &519420028
 GameObject:
   m_ObjectHideFlags: 0
@@ -858,8 +858,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 77e028834d7e27d4c815e693baabca64, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  arrowController: {fileID: 5790308777306180563, guid: 4888a60f2a4d5e14a9958edab42867cf, type: 3}
-  shootingPositions: []
+  lizardWizard: {fileID: 1758378425}
   gameManager: {fileID: 1499966721}
 --- !u!61 &601178824
 BoxCollider2D:
@@ -1208,13 +1207,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   knightHP: 3
-  lizardHP: 3
-  knightHealthText: {fileID: 0}
-  lizardHealthText: {fileID: 0}
-  boxes:
-  - {fileID: 1519085764}
-  - {fileID: 132849335}
-  - {fileID: 493955047}
+  lizardWizardHP: 3
+  knight: {fileID: 601178823}
+  lizardWizard: {fileID: 1758378425}
 --- !u!1 &1519085760
 GameObject:
   m_ObjectHideFlags: 0
@@ -1274,7 +1269,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 1
   m_Sprite: {fileID: 7482667652216324306, guid: 311925a002f4447b3a28927169b83ea6, type: 3}
   m_Color: {r: 0.21960786, g: 0.21960786, b: 0.21960786, a: 1}
   m_FlipX: 0
@@ -1339,8 +1334,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4218fc5f366049147bab39912106bf14, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  gameManager: {fileID: 1499966721}
-  isLizardBehindThisBox: 0
+  lizardWizard: {fileID: 1758378425}
+  knight: {fileID: 601178823}
 --- !u!1 &1758378422
 GameObject:
   m_ObjectHideFlags: 0
@@ -1438,8 +1433,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7d9b4063fcf68cf4893a09eadf0d105b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  boxes: []
-  selectedBox: -1
+  hidingBoxes:
+  - {fileID: 1519085762}
+  - {fileID: 132849333}
+  - {fileID: 493955045}
 --- !u!1 &2081736051
 GameObject:
   m_ObjectHideFlags: 0
@@ -1450,7 +1447,6 @@ GameObject:
   m_Component:
   - component: {fileID: 2081736053}
   - component: {fileID: 2081736052}
-  - component: {fileID: 2081736054}
   m_Layer: 0
   m_Name: Bow
   m_TagString: Untagged
@@ -1525,19 +1521,3 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &2081736054
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2081736051}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ff71a282e1699a445b2b126e48de1b8b, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  arrowPrefab: {fileID: 4123759417502267743, guid: 4888a60f2a4d5e14a9958edab42867cf, type: 3}
-  bowTransform: {fileID: 52329621}
-  arrowSpeed: 20
-  maxShootDistance: 20

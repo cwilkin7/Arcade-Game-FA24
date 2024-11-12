@@ -4,26 +4,26 @@ using UnityEngine;
 
 public class BoxController : MonoBehaviour
 {
-    // Reference to the GameManager
-    public GameManager gameManager;
-
-    // Is this box the one the Lizard Wizard is hiding behind?
-    public bool isLizardBehindThisBox = false;
-
-    // Called when an arrow hits the box
-    public void HitBox()
+    public LizardWizardController lizardWizard;
+    public KnightController knight;
+    
+    // Start is called before the first frame update
+    void Start()
     {
-        if (isLizardBehindThisBox)
-        {
-            Debug.Log("Lizard found! The knight wins this round.");
-            // Lizard gets hit, decrease Lizard's HP
-            gameManager.DecreaseLizardHP();
-        }
-        else
-        {
-            Debug.Log("The knight missed! The knight loses 1 HP.");
-            // Knight misses, decrease Knight's HP
-            gameManager.DecreaseKnightHP();
-        }
+        
+    }
+
+    // Update is called once per frame
+    void Update()
+    {
+
+        if (Input.GetKeyDown(KeyCode.Alpha4)) lizardWizard.ChooseBox(0);
+        if (Input.GetKeyDown(KeyCode.Alpha5)) lizardWizard.ChooseBox(1);
+        if (Input.GetKeyDown(KeyCode.Alpha6)) lizardWizard.ChooseBox(2);
+
+   
+        if (Input.GetKeyDown("space")) knight.GuessBox(0);
+        if (Input.GetKeyDown("v")) knight.GuessBox(1);
+        if (Input.GetKeyDown("b")) knight.GuessBox(2);
     }
 }
